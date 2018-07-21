@@ -41,13 +41,6 @@ async def say(ctx, *, msg = None):
     if not msg: await client.say("Please specify a message to send")
     else: await client.say(msg)
     return
- 
- 
-   
- 
-@client.command()
-async def Banhelp(*args):
-	await client.say("Ban {@user}")
 
 
 
