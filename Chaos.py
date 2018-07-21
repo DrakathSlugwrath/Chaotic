@@ -4,7 +4,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import platform
 import os
-client=Bot(description="Hi, i'm Chaos! My summoner is Drakath#3722, the following are my commands '", command_prefix="Chaos", pm_help = False)
+client=Bot(description="Hi, i'm Chaos! My summoner is Drakath#3722, the following are my commands '", command_prefix="Chaos ", pm_help = False)
 @client.event
 async def on_ready():
     print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
