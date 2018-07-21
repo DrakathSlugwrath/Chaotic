@@ -24,11 +24,7 @@ async def on_member_join(member):
     print("Sent message to " + member.name)
 
 
-@client.event
-async def on_member_join(member):
-    server = member.server
-    fmt = 'Welcome {0.mention} to {1.name}! Please check rules and never try to break any rules.'
-    await client.send_message(server, fmt.format(member, server))
+
 
 @client.event
 async def on_member_leave(member):
@@ -84,6 +80,7 @@ async def dm(ctx, member: discord.Member , msg = None):
 @client.command(pass_context = True)
 async def ban(ctx, member: discord.Member):
      if ctx.message.author.server_permissions.ban_members:
+	await client.delete_message(ctx.message)
         await client.ban(member)
         embed=discord.Embed(title="User Banned!", description="The ancient ones have banned **{0}** #rules, to see the rules!)".format(member, ctx.message.author), color=0xff00f6)
         await client.say(embed=embed)
