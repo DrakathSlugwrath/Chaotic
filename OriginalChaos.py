@@ -3,7 +3,7 @@ import asyncio
 from discord.ext.commands import Bot
 from discord.ext import commands
 import platform
-import time
+import os
 client=Bot(description="Hi, i'm Chaos! My summoner is Drakath#3722, the following are my commands '", command_prefix="Chaos ", pm_help = False)
 @client.event
 async def on_ready():
@@ -115,4 +115,5 @@ async def unmute(ctx, member: discord.Member):
         await bot.say(embed=embed)
      
                                                                                                
-client.run('NDY1OTM2MTEyNzg4MDQ1ODQ0.DjS8iA.XG33oICRE6iFahaP1LJ9ibMOxj0')
+
+client.run(os.getenv('NDY1OTM2MTEyNzg4MDQ1ODQ0.DiUxDQ.E0ieFhovwED1m7UeF3TGAO-V_Qw'))
