@@ -37,16 +37,6 @@ async def Banhelp(*args):
 
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
-async def dm2(ctx, *, msg = None):
-    await client.delete_message(ctx.message)
-
-    if not msg: await client.say("Please specify a user to send dm")
-    else: await client.send_message(msg)
-    return
-
-
-@client.command(pass_context = True)
-@commands.has_permissions(administrator=True)
 async def dm(ctx, member: discord.Member , msg = None):
     await client.delete_message(ctx.message)
     await client.send_message(member, msg)
