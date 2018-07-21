@@ -41,14 +41,14 @@ async def rules(ctx, *, msg = None):
     await client.delete_message(ctx.message)
 
     if not msg: await client.say("Please specify a user to warn")
-    else: await client.say(msg + 'Please Read <#469507420826238996> and never break any one of them again otherwise i will mute/kick/ban you next time.')
+    else: await client.say(msg + 'Please Read <#Rules> and never break any one of them again otherwise i will mute/kick/ban you next time.')
     return
 
 @client.command(pass_context = True)
 @commands.has_permissions(mute_members=True)
 async def warndm(ctx, member: discord.Member):
     await client.delete_message(ctx.message)
-    await client.send_message(member, 'Please Read <#469507420826238996> and never break any one of them again otherwise i will mute/kick/ban you next time.')
+    await client.send_message(member, 'Please Read <#Rules> and never break any one of them again otherwise i will mute/kick/ban you next time.')
     return
 
 
