@@ -81,7 +81,6 @@ async def dm(ctx, member: discord.Member , msg = None):
 async def ban(ctx, member: discord.Member):
      if ctx.message.author.server_permissions.ban_members:
         await client.ban(member)
-	await client.delete_message(ctx.message)
         embed=discord.Embed(title="User Banned!", description="The ancient ones have banned **{0}** #rules, to see the rules!)".format(member, ctx.message.author), color=0xff00f6)
         await client.say(embed=embed)
      else:
