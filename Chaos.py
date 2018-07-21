@@ -16,6 +16,19 @@ async def on_ready():
     return await client.change_presence(game=discord.Game(name='Youtube with Drakath#3722'))
     
        
+@client.event
+async def on_member_join(member):
+    server = member.server
+    fmt = 'Welcome {0.mention} to {1.name}! Please check rules and never try to break any rules.'
+    await client.send_message(server, fmt.format(member, server))
+
+@client.event
+async def on_member_leave(member):
+    server = member.server
+    fmt = '{0.mention} just left {1.name}!'
+    await client.send_message(server, fmt.format(member, server))
+
+
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
 async def say(ctx, *, msg = None):
