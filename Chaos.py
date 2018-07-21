@@ -4,6 +4,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import platform
 import os
+
 client = Bot(description="I corrupt the servers with Chaos", command_prefix="Chaos ", pm_help = True)
 
 @client.event
