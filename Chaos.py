@@ -15,7 +15,7 @@ async def on_ready():
     print('Long Live Chaos!')
     return await client.change_presence(game=discord.Game(name='Youtube with Drakath#3722'))
     
-newUserMessage = """Welcome to Crownsreach. Hope you will be active here. Check <#425268980740259840>,"""
+newUserMessage = """Welcome to Crownsreach. Hope you will be active here. Check <#452740981666742282>, <#453569407558483968> and <#453189578040541205>."""
 
 @client.event
 async def on_member_join(member):
