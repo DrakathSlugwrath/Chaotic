@@ -150,6 +150,18 @@ async def unmute(ctx, member: discord.Member):
      else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command, Fool", color=0xff00f6)
         await bot.say(embed=embed)
+        
+@client.command(pass_context=True)
+async def leave(ctx):
+    role = discord.utils.get(ctx.message.server.roles, name='Chaos Hero')
+    await client.remove_roles(ctx.message.author, role)
+    await client.kick(ctx.message.author)
+    
+@client.command(pass_context=True)
+async def join(ctx):
+    role = discord.utils.get(ctx.message.server.roles, name='Chaos Hero')
+    await client.add_roles(ctx.message.author, role)
+    
      
                                                                                                
 
