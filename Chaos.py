@@ -33,15 +33,7 @@ async def on_member_join(member):
 async def on_member_leave(member):
     server = member.server
     fmt = '{0.mention} just left {1.name}!'
-    await client.send_message(server, fmt.format(member, server))
- 
-
-@client.command(pass_context = True)
-@commands.has_role("Lord of Chaos")
-async def promote(ctx):
-    member = ctx.message.author
-    role = get(member.server.roles, name="Test")
-    await client.add_roles(member, role) 
+    await client.send_message(server, fmt.format(member, server)) 
   
                                          
 @client.command(pass_context = True)
