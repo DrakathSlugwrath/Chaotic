@@ -7,16 +7,6 @@ import os
 from itertools import cycle
 
 client = Bot(description="I corrupt the servers with Chaos", command_prefix="Chaos ", pm_help = True)
-status = ['Corrupting Servers', 'Crownsreach Management']
-
-async def change_status():
-    await client.wait_until_ready()
-    msgs = cycle(status)
-    
-    while not client.is_closed:
-        current_status = next(msgs)
-        await client.change_presence(game=discord.Game(name=current_status))
-        await asyncio.sleep(5)
 
 @client.event
 async def on_ready():
@@ -24,6 +14,8 @@ async def on_ready():
     print('--------------------------------------')
     print('Successfully Summoned Chaos!')
     print('Long Live Chaos!')
+    return await
+client.change_presence(game=discord.Game(name='Crownsreach management.))
     
     
 newUserMessage = """Welcome to Crownsreach. Hope you will be active here. Check <#452740981666742282>, <#453569407558483968> and <#453189578040541205> to know our server rules, announcements and events."""
