@@ -4,7 +4,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import platform
 import os
-from itertools import cycle
+from discord.utils import get
 
 client = Bot(description="I corrupt the servers with Chaos", command_prefix="Chaos ", pm_help = True)
 
@@ -34,8 +34,16 @@ async def on_member_leave(member):
     server = member.server
     fmt = '{0.mention} just left {1.name}!'
     await client.send_message(server, fmt.format(member, server))
+ 
 
-
+@client.command(pass_context = True)
+@commands.has_role("Lord of Chaos")
+async def promote(ctx):
+    member = ctx.message.author
+    role = get(member.server.roles, name="Test")
+    await client.add_roles(member, role) 
+  
+                                         
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
 async def say(ctx, *, msg = None):
