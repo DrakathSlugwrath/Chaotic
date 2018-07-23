@@ -14,7 +14,7 @@ async def on_ready():
     print('Successfully Summoned Chaos!')
     print('Long Live Chaos!')
     return await
-client.change_presence(game=discord.Game(name='Crownsreach management.))
+client.change_presence(game=discord.Game(name='Crownsreach management))
     
     
 newUserMessage = """Welcome to Crownsreach. Hope you will be active here. Check <#452740981666742282>, <#453569407558483968> and <#453189578040541205> to know our server rules, announcements and events."""
@@ -43,8 +43,6 @@ async def say(ctx, *, msg = None):
     if not msg: await client.say("Please specify a message to send")
     else: await client.say(msg)
     return
-
-
 
 
 @client.command(pass_context = True)
